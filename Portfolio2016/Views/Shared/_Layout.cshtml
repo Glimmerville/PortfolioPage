@@ -124,7 +124,7 @@
 </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -143,12 +143,14 @@
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
-    </div>
-    <div class="container body-content">
+    </div>*@
+    <div class="">
         @RenderBody()
-        <hr />
+        @*<hr />*@
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <div class="container col-md-12">
+                <p>&copy; @DateTime.Now.Year - Rachel Ross</p>
+            </div>
         </footer>
     </div>
 
@@ -162,7 +164,7 @@
             <i class="fa fa-2x fa-arrow-circle-up"></i>
         </span>
     </div>
-    </div>
+ 
     <script type="text/javascript">
 //Thanks to: http://www.webtipblog.com/adding-scroll-top-button-website/
 

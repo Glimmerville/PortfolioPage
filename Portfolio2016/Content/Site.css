@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 0px;
     padding-bottom: 20px;
 }
 
@@ -24,4 +24,31 @@ textarea {
 }
 h1 {
 	font-family: 'Muli', sans-serif;
+    color: white;
+}
+.backgroundimage {
+    /*background-image: url('images/tabs-studio-add-in-in-visual-studio-2013-preview.png');*/
+    background-color: #000000;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    position: relative;
+    display: block;
+    margin-bottom: 0px;
+    
+}
+.jumbotron {
+    background-color: #000000;
+}
+p {
+    font-size: 16px;
+}
+.container-fluid {
+    padding-left: 30px; 
+    padding-right: 30px;
+}
+.spacer {
+    padding-left: 20px;
+    padding-right: 20px;
 }
