@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Portfolio2016.Models.ProjectListModel>
+
+@{
+    ViewBag.Title = "Projects";
+}
+
+<h2>Projects</h2>
+<p>Here are some of my favorite projects:</p>
+<p>Copy all your code from the other index and put it in here.</p>
+<p>Then make the front page redirect here.</p>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<container class="img-responsive">
+    <container class="row">
+        <container class="col-md-6">
+            @Html.DisplayNameFor(model => model.ProjectName)
+
+            @Html.DisplayNameFor(model => model.ProjectMaterials)
+
+            @Html.DisplayNameFor(model => model.ProjectDescription)
+        </container>
+        <container class="col-md-6">
+
+            @Html.DisplayNameFor(model => model.ProjectImage)
+
+            @Html.DisplayNameFor(model => model.ProjectSmlImage)
+
+            @Html.DisplayNameFor(model => model.ProjectRepo)
+
+            @Html.DisplayNameFor(model => model.ProjectURL)
+        </container>
+    </container>
+
+    @foreach (var item in Model)
+    {
+        <container class="row">
+            <container class="col-md-6">
+                @Html.DisplayFor(modelItem => item.ProjectName)
+                @Html.DisplayFor(modelItem => item.ProjectMaterials)
+                @Html.DisplayFor(modelItem => item.ProjectDescription)
+            </container>
+            <container class="col-md-6">
+
+                @Html.DisplayFor(modelItem => item.ProjectRepo)
+
+                @Html.DisplayFor(modelItem => item.ProjectURL)
+
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.ProjectID }) @:|
+                @Html.ActionLink("Details", "Details", new { id = item.ProjectID }) @: |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProjectID })*@
+
+
+                @Html.DisplayFor(modelItem => item.ProjectImage)
+
+                @Html.DisplayFor(modelItem => item.ProjectSmlImage)
+            </container>
+        </container>
+    }
+</container>
+
