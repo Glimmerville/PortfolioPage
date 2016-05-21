@@ -41,24 +41,25 @@
 
         @foreach (var item in Model)
         {
-                <container class="col-md-3">
+                <container class="col-md-4">
                     <p>
-                        @Html.DisplayFor(modelItem => item.ProjectName)
+                        <h3>
+                            @Html.DisplayFor(modelItem => item.ProjectName)
+                        </h3><hr />
+                        <h4>Source Code:</h4>
                         @Html.DisplayFor(modelItem => item.ProjectMaterials)
+                        <br />
+                        <h4>What it does:</h4>
                         @Html.DisplayFor(modelItem => item.ProjectDescription)
-
-                        @Html.DisplayFor(modelItem => item.ProjectRepo)
-
-                        @Html.DisplayFor(modelItem => item.ProjectURL)
-
-
-
+                        <br />
+                       
+                        @*@Html.DisplayFor(modelItem => item.ProjectURL) I am not going to use this after all.*@
                         @*@Html.DisplayFor(modelItem => item.ProjectImage)*@
                         @*Hide the actual path and show the image*@
                         @{ 
                             if (item.ProjectImage != null)
                             {
-                                <img src="@Url.Content(item.ProjectImage)" alt="Image" />
+                                <img src="@Url.Content(item.ProjectImage)" alt="Image" style="max-width: 250px" />
                             }
                         }
                         @*<img src="@Url.Content(Model.ImagePath)" alt="Image" /> this is supposed to help*@
@@ -67,9 +68,18 @@
                         @{
                             if (item.ProjectSmlImage != null)
                             {
-                                <img src="@Url.Content(item.ProjectSmlImage)" alt="Image" />
+                                <img src="@Url.Content(item.ProjectSmlImage)" alt="Image" style="max-width: 200px"  />
                             }
                         }
+                        <br />
+                        @*@Html.DisplayFor(modelItem => item.ProjectRepo)*@
+                        @{
+                            if (item.ProjectRepo != null)
+                            {
+                                <a href="@Url.Content(item.ProjectImage)" alt="Git Hub">See it on Github</a>
+                            }
+                        }
+                        <br />
                     </p>
                 </container>
 
