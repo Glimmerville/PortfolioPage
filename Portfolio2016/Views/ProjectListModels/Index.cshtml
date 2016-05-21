@@ -4,59 +4,64 @@
     ViewBag.Title = "Projects";
 }
 
-<h2>Projects</h2>
-<p>Here are some of my favorite projects:</p>
-<p>Copy all your code from the other index and put it in here.</p>
-<p>Then make the front page redirect here.</p>
+<div class="jumbotron" style="background-color:#000000;">
+    <div class="container text-center">
+        @*<h1>Rachel Ross</h1>*@
+        <img src="~/Content/images/path4333-0.png" />
+        @*<p class="lead">Junior Web Developer</p>*@
+        @*<p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+    </div>
+</div>
+<div class="container-fluid page-header">
+    <div class="row">
+        <div class="col-lg-8 col-sm-6">
+            <h1>About Me</h1>
+            <p>I'm a recent graduate of the We Can Code IT code school in Cleveland, Ohio. I'm a certified Software Engineer, trained in C# and the ASP .NET framework. I have a background in technical writing and a degree in biology. I am looking for a position as a Junior Developer.</p>
+            <p><a href="https://www.linkedin.com/in/racheleross"><i class="fa fa-2x fa-linkedin spacer" aria-hidden="true"></i></a><a href="https://github.com/Glimmerville"><i class="fa fa-2x fa-github spacer" aria-hidden="true"></i></a><a href="https://twitter.com/Nycteris"><i class="fa fa-twitter fa-2x spacer" aria-hidden="true"></i></a><a href="http://glimmerville.com"><i class="fa fa-pencil fa-2x spacer" aria-hidden="true"></i></a></p>
+        </div>
+        <div class="col-md-4 col-sm-6 text-center">
+            <img class="img-circle text-center" src="~/Content/images/rachel_photobw_small.jpg" alt="Rachel Ross's portrait'" width="200" height="200">
+            <h4><a href="mailto:racheleross@gmail.com">racheleross@gmail.com</a></h4>
+        </div>
+    </div>
 
-<p>
-    @*@Html.ActionLink("Create New", "Create")*@
-</p>
-<container class="img-responsive">
-    <container class="row">
-        <container class="col-md-6">
-            @Html.DisplayNameFor(model => model.ProjectName)
 
-            @Html.DisplayNameFor(model => model.ProjectMaterials)
+    <p>
+        @*@Html.ActionLink("Create New", "Create")*@
+                @*@Html.DisplayNameFor(model => model.ProjectName)
+                @Html.DisplayNameFor(model => model.ProjectMaterials)
+                @Html.DisplayNameFor(model => model.ProjectDescription)*@
+                @*@Html.DisplayNameFor(model => model.ProjectImage)
+                @Html.DisplayNameFor(model => model.ProjectSmlImage)
+                @Html.DisplayNameFor(model => model.ProjectRepo)
+                @Html.DisplayNameFor(model => model.ProjectURL)*@
+    </p>
+    <container class="img-responsive">
+         
 
-            @Html.DisplayNameFor(model => model.ProjectDescription)
-        </container>
-        <container class="col-md-6">
+        @foreach (var item in Model)
+        {
+                <container class="col-md-3">
+                    <p>
+                        @Html.DisplayFor(modelItem => item.ProjectName)
+                        @Html.DisplayFor(modelItem => item.ProjectMaterials)
+                        @Html.DisplayFor(modelItem => item.ProjectDescription)
 
-            @Html.DisplayNameFor(model => model.ProjectImage)
+                        @Html.DisplayFor(modelItem => item.ProjectRepo)
 
-            @Html.DisplayNameFor(model => model.ProjectSmlImage)
+                        @Html.DisplayFor(modelItem => item.ProjectURL)
 
-            @Html.DisplayNameFor(model => model.ProjectRepo)
 
-            @Html.DisplayNameFor(model => model.ProjectURL)
-        </container>
+
+                        @Html.DisplayFor(modelItem => item.ProjectImage)
+                        @*<img src="@Url.Content(Model.ImagePath)" alt="Image" /> this is supposed to help*@
+                        @Html.DisplayFor(modelItem => item.ProjectSmlImage)
+                    </p>
+                </container>
+
+        }
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.ProjectID }) @:|
+                        @Html.ActionLink("Details", "Details", new { id = item.ProjectID }) @: |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ProjectID })*@
     </container>
-
-    @foreach (var item in Model)
-    {
-        <container class="row">
-            <container class="col-md-6">
-                @Html.DisplayFor(modelItem => item.ProjectName)
-                @Html.DisplayFor(modelItem => item.ProjectMaterials)
-                @Html.DisplayFor(modelItem => item.ProjectDescription)
-            </container>
-            <container class="col-md-6">
-
-                @Html.DisplayFor(modelItem => item.ProjectRepo)
-
-                @Html.DisplayFor(modelItem => item.ProjectURL)
-
-                @*@Html.ActionLink("Edit", "Edit", new { id = item.ProjectID }) @:|
-                @Html.ActionLink("Details", "Details", new { id = item.ProjectID }) @: |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ProjectID })*@
-
-
-                @Html.DisplayFor(modelItem => item.ProjectImage)
-
-                @Html.DisplayFor(modelItem => item.ProjectSmlImage)
-            </container>
-        </container>
-    }
-</container>
-
+</div>
