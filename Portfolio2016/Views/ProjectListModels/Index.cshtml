@@ -53,9 +53,23 @@
 
 
 
-                        @Html.DisplayFor(modelItem => item.ProjectImage)
+                        @*@Html.DisplayFor(modelItem => item.ProjectImage)*@
+                        @*Hide the actual path and show the image*@
+                        @{ 
+                            if (item.ProjectImage != null)
+                            {
+                                <img src="@Url.Content(item.ProjectImage)" alt="Image" />
+                            }
+                        }
                         @*<img src="@Url.Content(Model.ImagePath)" alt="Image" /> this is supposed to help*@
-                        @Html.DisplayFor(modelItem => item.ProjectSmlImage)
+                        @*@Html.DisplayFor(modelItem => item.ProjectSmlImage)*@
+                        @*Hide the visible path and show the image*@
+                        @{
+                            if (item.ProjectSmlImage != null)
+                            {
+                                <img src="@Url.Content(item.ProjectSmlImage)" alt="Image" />
+                            }
+                        }
                     </p>
                 </container>
 

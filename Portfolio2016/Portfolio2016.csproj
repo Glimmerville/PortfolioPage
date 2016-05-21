@@ -185,9 +185,11 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\kitty.jpg" />
     <Content Include="Content\images\path4333-0.png" />
     <Content Include="Content\images\rachel_photobw_small.jpg" />
     <Content Include="Content\images\tabs-studio-add-in-in-visual-studio-2013-preview.png" />
+    <Content Include="Content\images\twisted_path.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
