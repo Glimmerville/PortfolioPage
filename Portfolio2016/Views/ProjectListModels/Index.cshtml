@@ -1,21 +1,30 @@
 ﻿@model IEnumerable<Portfolio2016.Models.ProjectListModel>
 <link href="~/Content/animate.css" rel="stylesheet" />
+<script src="~/Scripts/MyScript.js"></script>
 @{
     ViewBag.Title = "Projects";
 }
+<script>
 
+    $(document).ready(function () {
+        $('#jumpy').each(function () {
+            animationHover(this, 'wobble');
+        });
+    });
+</script>
 <div class="jumbotron" style="background-color:#000000;">
     <div class="container text-center">
         @*<h1>Rachel Ross</h1>*@
+ 
         <img src="~/Content/images/path4333-0.png" class="animated bounceInDown"/>
         @*<p class="lead">Junior Web Developer</p>*@
-        @*<p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+        @*<p><a href="~/Home/About.cshtml" >Learn more &raquo;</a></p>*@
     </div>
 </div>
 <div class="container-fluid page-header">
     <div class="row">
         <div class="col-lg-8 col-sm-6">
-            <h1>About Me</h1>
+            <h1 id="jumpy"><a href="@Url.Action("About","Home")">About Me</a></h1>
             <p>I'm a recent graduate of the We Can Code IT code school in Cleveland, Ohio. I'm a certified Software Engineer, trained in C# and the ASP .NET framework. I have a background in technical writing and a degree in biology. I am looking for a position as a Junior Developer.</p>
             <p><a href="https://www.linkedin.com/in/racheleross"><i class="fa fa-2x fa-linkedin spacer" aria-hidden="true"></i></a><a href="https://github.com/Glimmerville"><i class="fa fa-2x fa-github spacer" aria-hidden="true"></i></a><a href="https://twitter.com/Nycteris"><i class="fa fa-twitter fa-2x spacer" aria-hidden="true"></i></a><a href="http://glimmerville.com"><i class="fa fa-pencil fa-2x spacer" aria-hidden="true"></i></a></p>
         </div>
@@ -36,57 +45,57 @@
                 @Html.DisplayNameFor(model => model.ProjectRepo)
                 @Html.DisplayNameFor(model => model.ProjectURL)*@
     </p>
-    <container class="img-responsive">
+    <container class="container img-responsive">
          
+        <container class="row">
+    @foreach (var item in Model)
+    {
+        <container class="col-lg-4 col-sm-6">
+            <p>
+                <h3>
+                    @Html.DisplayFor(modelItem => item.ProjectName)
+                </h3><hr />
+                <h4>Source Code:</h4>
+                @Html.DisplayFor(modelItem => item.ProjectMaterials)
+                <br />
+                <h4>What it does:</h4>
+                @Html.DisplayFor(modelItem => item.ProjectDescription)
+                <br />
 
-        @foreach (var item in Model)
-        {
-                <container class="col-md-4">
-                    <p>
-                        <h3>
-                            @Html.DisplayFor(modelItem => item.ProjectName)
-                        </h3><hr />
-                        <h4>Source Code:</h4>
-                        @Html.DisplayFor(modelItem => item.ProjectMaterials)
-                        <br />
-                        <h4>What it does:</h4>
-                        @Html.DisplayFor(modelItem => item.ProjectDescription)
-                        <br />
-                       
-                        @*@Html.DisplayFor(modelItem => item.ProjectURL) I am not going to use this after all.*@
-                        @*@Html.DisplayFor(modelItem => item.ProjectImage)*@
-                        @*Hide the actual path and show the image*@
-                        @{ 
-                            if (item.ProjectImage != null)
-                            {   
-                                
-                                <img src="@Url.Content(item.ProjectImage)" alt="Image"  style="max-width: 350px" />
-                            }
-                        }
-                        @*<img src="@Url.Content(Model.ImagePath)" alt="Image" /> this is supposed to help*@
-                        @*@Html.DisplayFor(modelItem => item.ProjectSmlImage)*@
-                        @*Hide the visible path and show the image*@
-                        @{
-                            if (item.ProjectSmlImage != null)
-                            {
-                                <img src="@Url.Content(item.ProjectSmlImage)" alt="Image"  style="max-width: 200px"  />
-                            }
-                        }
-                        <br />
-                        @*@Html.DisplayFor(modelItem => item.ProjectRepo)*@
-                        @{
-                            if (item.ProjectRepo != null)
-                            {
-                               <a href="@Url.Content(item.ProjectImage)" class="btn btn-info" alt="Git Hub">See it on Github</a>
-                            }
-                        }
-                        <br />
-                    </p>
-                </container>
+                @*@Html.DisplayFor(modelItem => item.ProjectURL) I am not going to use this after all.*@
+                @*@Html.DisplayFor(modelItem => item.ProjectImage)*@
+                @*Hide the actual path and show the image*@
+                @{
+                    if (item.ProjectImage != null)
+                    {
 
-        }
+                        <img src="@Url.Content(item.ProjectImage)" alt="Image" style="max-width: 350px" />
+                    }
+                }
+                @*<img src="@Url.Content(Model.ImagePath)" alt="Image" /> this is supposed to help*@
+                @*@Html.DisplayFor(modelItem => item.ProjectSmlImage)*@
+                @*Hide the visible path and show the image*@
+                @{
+                    if (item.ProjectSmlImage != null)
+                    {
+                        <img src="@Url.Content(item.ProjectSmlImage)" alt="Image" style="max-width: 200px" />
+                    }
+                }
+                <br />
+                @*@Html.DisplayFor(modelItem => item.ProjectRepo)*@
+                @{
+                    if (item.ProjectRepo != null)
+                    {
+                        <a href="@Url.Content(item.ProjectImage)" class="btn btn-info" alt="Git Hub">See it on Github</a>
+                    }
+                }
+                <br />
+            </p>
+        </container>
+                    }
                     @*@Html.ActionLink("Edit", "Edit", new { id = item.ProjectID }) @:|
                         @Html.ActionLink("Details", "Details", new { id = item.ProjectID }) @: |
                         @Html.ActionLink("Delete", "Delete", new { id = item.ProjectID })*@
+    </container>
     </container>
 </div>
