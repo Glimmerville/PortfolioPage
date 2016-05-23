@@ -1,7 +1,62 @@
-﻿@{
+﻿<link href="~/Content/Timeline.css" rel="stylesheet" />
+<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+@*@{
     ViewBag.Title = "About";
 }
 <h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h3>@ViewBag.Message</h3>*@
+@*started with code from http://codepen.io/betdream/*@
 
-<p>Use this area to provide additional information.</p>
+<div class="container">
+    <div class="page-header">
+        <h1 id="timeline">About Me</h1>
+    </div>
+    <ul class="timeline">
+        <li>
+            <div class="timeline-badge success"><i class="glyphicon glyphicon-check"></i></div>
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <h4 class="timeline-title">We Can Code It!</h4>
+                    @*<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small></p>*@
+                </div>
+                <div class="timeline-body">
+                    <p>
+                        Hi! My name is Rachel Ross. I'm a recent graduate of We Can {Code} IT, a code bootcamp in the heart of Cleveland.! I really want to make <span class="beautiful">beautiful</span> and <span class="beautiful">functional</span> webpages. I'm learning so much! At WCCI I had my first taste of C# and database design. This was the missing key I needed to complete my first working app: <a href="http://identiflora.com" class="btn btn-success">Identiflora</a>. Go ahead: click and check it out. I'll be here when you get back.
+                    </p>
+                </div>
+            </div>
+        </li>
+        <li class="timeline-inverted">
+            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <h4 class="timeline-title">I Can Code It!</h4>
+                </div>
+                <div class="timeline-body">
+                    <p>
+                       I am an aspiring web designer and full-stack developer, ready to design your dream in code! My skills include C#, .NET and MVC, SQL, HTML, CSS, JavaScript, JQuery, and I'm working hard to learn more. Design skills also include Photoshop and Illustrator. I sketch and photograph, and sculpt too. Before I went into coding, I was a technical editor - need any proofreading? 
+                    </p>
+                </div>
+            </div>
+        </li>
+        <li class="timeline-panel">
+            <div class="timeline-badge"><i class="glyphicon glyphicon-thumbs-up"></i></div>
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <h4 class="timeline-title">On The Web</h4>
+                </div>
+                <div class="timeline-body">
+                    <p>You can find me here:
+                        <ul class="inlineUL" style="list-style-type: none;">
+                        <li><a href="https://www.linkedin.com/in/racheleross"><i class="fa fa-2x fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="https://github.com/Glimmerville"><i class="fa fa-2x fa-github" aria-hidden="true"></i></a></li>
+                        <li><a href="http://glimmerville.com"><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></a></li>
+                        <li><a href="https://twitter.com/Nycteris"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a> (Warning, I'm silly.)</li>
+                       </ul>
+                    
+                    </p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
