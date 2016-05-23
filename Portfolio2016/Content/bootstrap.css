@@ -1074,7 +1074,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #ae895d;
+  color: #2D667F;
   background-color: #d6d6d6;
 }
 input,
@@ -1137,7 +1137,7 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #ae895d;
+  border-top: 1px solid #2D667F;
 }
 .sr-only {
   position: absolute;
@@ -4942,7 +4942,7 @@ a.badge:focus {
   padding-bottom: 30px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #ae895d;
+  background-color: #2D667F;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -5005,7 +5005,7 @@ a.thumbnail.active {
 }
 .thumbnail .caption {
   padding: 9px;
-  color: #ae895d;
+  color: #2D667F;
 }
 .alert {
   padding: 15px;
@@ -5660,7 +5660,7 @@ button.list-group-item-danger.active:focus {
   border-color: #dddddd;
 }
 .panel-default > .panel-heading {
-  color: #ae895d;
+  color: #2D667F;
   background-color: #575e71;
   border-color: #dddddd;
 }
@@ -5669,7 +5669,7 @@ button.list-group-item-danger.active:focus {
 }
 .panel-default > .panel-heading .badge {
   color: #575e71;
-  background-color: #ae895d;
+  background-color: #2D667F;
 }
 .panel-default > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #dddddd;
