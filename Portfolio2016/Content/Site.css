@@ -52,3 +52,12 @@ p {
     padding-left: 20px;
     padding-right: 20px;
 }
+.blue {
+    color: #0026ff;
+    -webkit-animation-delay: 3s;
+    -webkit-animation-iteration-count: 1;
+}
+.glyphtwitch {
+    -webkit-animation-delay: 3s;
+    -webkit-animation-iteration-count: 1;
+}

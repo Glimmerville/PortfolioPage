@@ -150,9 +150,15 @@
 .beautiful {
     font-family: 'Lobster', cursive;
 }
-.inlineUl
-{
-    display: inline;
-    margin-left: 2px;
-    padding-left: 0px;
+#inlineUl {
+    padding-left: 2px;
+    list-style-type: none;
+}
+ul#inlineUl li {
+     display: inline;
+     margin-left: 20px;
+     margin-right: 20px;
+}
+ul#inlineUl li:first-child {
+    margin-left: 0px;
 }

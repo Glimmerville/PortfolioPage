@@ -10,7 +10,8 @@ namespace Portfolio2016.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            //return View(); My working index is really in ProjectListModels
+            return RedirectToAction("Index", "ProjectListModels");
         }
 
         public ActionResult About()
