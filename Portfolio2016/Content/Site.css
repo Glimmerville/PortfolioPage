@@ -63,14 +63,24 @@ p {
 }
 #frontList {
     padding-left: 15px;
+
+}
+.hidden {
     visibility: hidden;
 }
 #frontList li {
      display: inline;
      margin-left: 20px;
      margin-right: 20px;
+     color:white;
 }
 ul#frontList li:first-child {
     margin-left: 0px;
     padding-left: 0px;
+}
+a:visited {
+    color: #3366ff;
+}
+a {
+    color: #3366ff;
 }

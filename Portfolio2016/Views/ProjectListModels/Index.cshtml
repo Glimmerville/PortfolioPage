@@ -5,7 +5,7 @@
     ViewBag.Title = "Projects";
 }
 <script>
-//Make it clear you can click the About Me button!
+//Make it clear you can click the About Me button! 
     $(document).ready(function () {
         $('#jumpy').each(function () {
             setTimeout(function () {
@@ -13,28 +13,33 @@
             }, 800);            
             animationHover(this, 'tada');
         });
+        //Make some nav links appear.
         $('#portrait').hover(function () {
             $('#frontList').each(function () {
-                $('#frontList').removeClass('hidden');
-                $('#frontList').addClass('animated bounceInDown');
+                $('#frontList').removeClass('hidden').addClass('animated bounceInDown');
             })
+        })
+        //let's make them just show up anyway if no one hovers
+        $('#frontlist').each(function () {
+            setTimeout(function () {
+                $('#frontlist').removeClass('hidden').addClass('animated bounceInDown');
+            }, 4000);
         })
     });
 
 </script>
 <div class="jumbotron" style="background-color:#000000;">
     <div class="container text-center">
-        <div class="col-md-4" style="color:white;">
-            <ul id="frontList">
-                <li>About</li>
-                <li>Contact</li>
-                <li>Resume</li>
+        <div class="col-md-4" style="color:white;"> @*these start life hidden*@
+            <ul id="frontList" class="hidden">
+                <li><a href="@Url.Action("About","Home")">About Me</a></li>
+                <li><a href="mailto:racheleross@gmail.com">Email</a></li>
+                <li><a href="http://bootstrap.glimmerville.com/RacheleRoss2016.pdf">Resume</a></li>
             </ul>
         </div>
         <div class="col-md-4">
             <img src="~/Content/images/path4333-0.png" id ="portrait"class="animated bounceInDown" alt="Rachel Ross, Jr Web Developer" /></div>
         <div class="col-md-4"></div>
-        @*<p><a href="~/Home/About.cshtml" >Learn more &raquo;</a></p>*@
     </div>
 </div>
 <div class="container-fluid">
@@ -80,13 +85,13 @@
                         @*Hide the path and show the image*@
                         @*Actually it fit my idea better to not have two images per project.
                         But I kept this in case I need it later.*@
-                        @{
+                        @*@{
                             if (item.ProjectSmlImage != null)
                             {
                                 <img src="@Url.Content(item.ProjectSmlImage)" alt="Image" style="max-width: 200px" />
                             }
                         }
-                        <br />
+                        <br />*@
                         @*@Html.DisplayFor(modelItem => item.ProjectRepo)*@
                         @{
                             if (item.ProjectRepo != null)
