@@ -11,3 +11,9 @@
             }, 2000);
         });
 }
+
+$(document).ready(function () {
+    setTimeout(function () {
+        $('#frontlist').removeClass('hidden');
+    }, 1000);
+});

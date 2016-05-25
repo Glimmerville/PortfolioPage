@@ -84,3 +84,13 @@ a:visited {
 a {
     color: #3366ff;
 }
+.padded {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.halfspacer {
+    margin-right: 10px;
+    padding-right: 10px;
+}

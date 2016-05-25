@@ -1,40 +1,25 @@
 ﻿@model IEnumerable<Portfolio2016.Models.ProjectListModel>
 <link href="~/Content/animate.css" rel="stylesheet" />
+@Scripts.Render("~/bundles/jquery")
 <script src="~/Scripts/MyScript.js"></script>
+
 @{
     ViewBag.Title = "Projects";
 }
 <script>
-//Make it clear you can click the About Me button! 
-    $(document).ready(function () {
-        $('#jumpy').each(function () {
-            setTimeout(function () {
-                $('#jumpy').removeClass('bounceInDown');
-            }, 800);            
-            animationHover(this, 'tada');
-        });
-        //Make some nav links appear.
-        $('#portrait').hover(function () {
-            $('#frontList').each(function () {
-                $('#frontList').removeClass('hidden').addClass('animated bounceInDown');
-            })
-        })
-        //let's make them just show up anyway if no one hovers
-        $('#frontlist').each(function () {
-            setTimeout(function () {
-                $('#frontlist').removeClass('hidden').addClass('animated bounceInDown');
-            }, 4000);
-        })
-    });
-
+$(document).ready(function () {
+    setTimeout(function () {
+        $('#frontlist').removeClass('hidden');
+    }, 1000);
+});
 </script>
 <div class="jumbotron" style="background-color:#000000;">
     <div class="container text-center">
         <div class="col-md-4" style="color:white;"> @*these start life hidden*@
-            <ul id="frontList" class="hidden">
-                <li><a href="@Url.Action("About","Home")">About Me</a></li>
-                <li><a href="mailto:racheleross@gmail.com">Email</a></li>
-                <li><a href="http://bootstrap.glimmerville.com/RacheleRoss2016.pdf">Resume</a></li>
+            <ul id="frontList" class='hidden'>
+                <li class="animated"><a href="@Url.Action("About","Home")">About Me</a></li>
+                <li class="animated"><a href="mailto:racheleross@gmail.com">Email</a></li>
+                <li class="animated"><a href="http://bootstrap.glimmerville.com/RacheleRoss2016.pdf">Resume</a></li>
             </ul>
         </div>
         <div class="col-md-4">
@@ -45,9 +30,10 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-8 col-sm-6">
-            <h1 id="jumpy" class="animated bounceInDown"><a href="@Url.Action("About","Home")">About Me</a></h1>
-            <p>I'm a recent graduate of the We Can Code IT code school in Cleveland, Ohio. I'm a certified Software Engineer, trained in C# and the ASP .NET framework. I have a background in technical writing and a degree in biology. I am looking for a position as a Junior Developer. Click <span>About Me</span> to see more.</p>
-            <p><a href="https://www.linkedin.com/in/racheleross"><i class="fa fa-2x fa-linkedin spacer" aria-hidden="true"></i></a><a href="https://github.com/Glimmerville"><i class="fa fa-2x fa-github spacer" aria-hidden="true"></i></a><a href="https://twitter.com/Nycteris"><i class="fa fa-twitter fa-2x spacer" aria-hidden="true"></i></a><a href="http://glimmerville.com"><i class="fa fa-pencil fa-2x spacer" aria-hidden="true"></i></a></p>
+            <h1><a href="@Url.Action("About","Home")">Hi!</a></h1>
+            <p>I'm looking for a position as a Junior Developer.</p> 
+            <h3 class="animated tada"><a class="animated bounceInDown" href="@Url.Action("About","Home")">Find Out About Me</a></h3> 
+            <p><a href="https://www.linkedin.com/in/racheleross"><i class="fa fa-2x fa-linkedin halfspacer" aria-hidden="true"></i></a><a href="https://github.com/Glimmerville"><i class="fa fa-2x fa-github spacer" aria-hidden="true"></i></a><a href="https://twitter.com/Nycteris"><i class="fa fa-twitter fa-2x spacer" aria-hidden="true"></i></a><a href="http://glimmerville.com"><i class="fa fa-pencil fa-2x spacer" aria-hidden="true"></i></a></p>
         </div>
         <div class="col-md-4 col-sm-6 text-center">
             <img class="img-circle text-center" src="~/Content/images/rachel_photobw_small.jpg" alt="Rachel Ross's portrait'" width="200" height="200">
@@ -55,11 +41,10 @@
         </div>
     </div>
 
-    <container class="container img-responsive">
         <container class="row">
             @foreach (var item in Model)
             {
-                <container class="col-lg-4 col-sm-6" style="clear:right">
+                <container class="col-md-4 col-sm-6" style="min-height: 550px;">
                     <p>
                         <h3>
                             @Html.DisplayFor(modelItem => item.ProjectName)
@@ -77,21 +62,21 @@
                         @{
                             if (item.ProjectImage != null)
                             {
-                                <img src="@Url.Content(item.ProjectImage)" alt="Image" style="max-width: 325px" />
+                                <img src="@Url.Content(item.ProjectImage)" alt="Image" class="img-responsive" />
                             }
                         }
 
                         @*@Html.DisplayFor(modelItem => item.ProjectSmlImage)*@
                         @*Hide the path and show the image*@
                         @*Actually it fit my idea better to not have two images per project.
-                        But I kept this in case I need it later.*@
+            But I kept this in case I need it later.*@
                         @*@{
-                            if (item.ProjectSmlImage != null)
-                            {
-                                <img src="@Url.Content(item.ProjectSmlImage)" alt="Image" style="max-width: 200px" />
-                            }
-                        }
-                        <br />*@
+                if (item.ProjectSmlImage != null)
+                {
+                    <img src="@Url.Content(item.ProjectSmlImage)" alt="Image" style="max-width: 200px" />
+                }
+            }
+            <br />*@
                         @*@Html.DisplayFor(modelItem => item.ProjectRepo)*@
                         @{
                             if (item.ProjectRepo != null)
@@ -104,5 +89,7 @@
                 </container>
             } @*end of foreach*@
         </container> @*End of Row*@
-    </container> @*end of container img-responsive*@
+
 </div> @*end of div container-fluid*@
+
+

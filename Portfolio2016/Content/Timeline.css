@@ -166,3 +166,6 @@ ul#inlineUl li:first-child {
     float: right;
     font-size: 32px;
 }
+a:visited {
+    color: white;
+}

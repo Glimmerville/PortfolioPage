@@ -9,7 +9,11 @@
 
 <div class="container">
     <div class="page-header">
-        <h1 id="timeline"><a href="@Url.Action("Index", "ProjectListModels")"><i class="fa fa-home" style="padding-right: 10px;"></i></a>About Me <span id="resumelink"><a href="http://bootstrap.glimmerville.com/RacheleRoss2016.pdf">My Resume</a></span></h1>
+        <ul id="inlineUl" class="h3">
+            <li><a href="@Url.Action("Index", "ProjectListModels")">Home</a></li>
+            <li><a href="#contacts">Contact</a></li>
+            <li><a href="http://bootstrap.glimmerville.com/RacheleRoss2016.pdf">My Resume</a></li>
+        </ul>
     </div>
     <ul class="timeline">
         <li>
@@ -46,8 +50,8 @@
                     <h4 class="timeline-title">On The Web</h4>
                 </div>
                 <div class="timeline-body">
-                    <p>You can find me here:
-                        <ul id="inlineUl">
+                    <p id="contacts">You can find me here:
+                        <ul id="inlineUl" class="dark">
                         <li><a href="https://www.linkedin.com/in/racheleross"><i class="fa fa-2x fa-linkedin" aria-hidden="true"></i></a></li>
                         <li><a href="https://github.com/Glimmerville"><i class="fa fa-2x fa-github" aria-hidden="true"></i></a></li>
                         <li><a href="http://glimmerville.com"><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></a></li>
