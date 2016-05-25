@@ -84,6 +84,9 @@ a:visited {
 a {
     color: #3366ff;
 }
+a:hover {
+    color: #3366ff;
+}
 .padded {
     padding-left: 10px;
     padding-right: 10px;

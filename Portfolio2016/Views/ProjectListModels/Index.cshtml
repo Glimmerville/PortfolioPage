@@ -16,7 +16,7 @@ $(document).ready(function () {
 <div class="jumbotron" style="background-color:#000000;">
     <div class="container text-center">
         <div class="col-md-4" style="color:white;"> @*these start life hidden*@
-            <ul id="frontList" class='hidden'>
+            <ul id="frontList">
                 <li class="animated"><a href="@Url.Action("About","Home")">About Me</a></li>
                 <li class="animated"><a href="mailto:racheleross@gmail.com">Email</a></li>
                 <li class="animated"><a href="http://bootstrap.glimmerville.com/RacheleRoss2016.pdf">Resume</a></li>
@@ -30,9 +30,9 @@ $(document).ready(function () {
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-8 col-sm-6">
-            <h1><a href="@Url.Action("About","Home")">Hi!</a></h1>
+            <h1>Hi!</h1>
             <p>I'm looking for a position as a Junior Developer.</p> 
-            <h3 class="animated tada"><a class="animated bounceInDown" href="@Url.Action("About","Home")">Find Out About Me</a></h3> 
+            <h3 class="animated tada"><a style="text-decoration:underline;" href="@Url.Action("About","Home")">Find Out About Me</a></h3> 
             <p><a href="https://www.linkedin.com/in/racheleross"><i class="fa fa-2x fa-linkedin halfspacer" aria-hidden="true"></i></a><a href="https://github.com/Glimmerville"><i class="fa fa-2x fa-github spacer" aria-hidden="true"></i></a><a href="https://twitter.com/Nycteris"><i class="fa fa-twitter fa-2x spacer" aria-hidden="true"></i></a><a href="http://glimmerville.com"><i class="fa fa-pencil fa-2x spacer" aria-hidden="true"></i></a></p>
         </div>
         <div class="col-md-4 col-sm-6 text-center">
