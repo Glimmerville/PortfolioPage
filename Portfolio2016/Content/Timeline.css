@@ -162,3 +162,13 @@ ul#inlineUl li {
 ul#inlineUl li:first-child {
     margin-left: 0px;
 }
+#resumelink {
+    float: right;
+    font-size: 32px;
+    background-color: darkgrey;
+    /*margin: 5px, 5px, 5px, 5px;*/
+    /*padding: 5px, 5px, 5px, 5px;*/
+    border: solid;
+    border-color: darkgrey;
+    border-radius: 10px;
+}
