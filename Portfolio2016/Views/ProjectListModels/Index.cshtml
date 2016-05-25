@@ -7,25 +7,33 @@
 <script>
 //Make it clear you can click the About Me button!
     $(document).ready(function () {
-        //setInterval(function () {
-        //    $("#jumpy").addClass("tada blue");
-        //}, 3500);
-
         $('#jumpy').each(function () {
             setTimeout(function () {
                 $('#jumpy').removeClass('bounceInDown');
-            }, 800);
-            
+            }, 800);            
             animationHover(this, 'tada');
         });
+        $('#portrait').hover(function () {
+            $('#frontList').each(function () {
+                $('#frontList').removeClass('hidden');
+                $('#frontList').addClass('animated bounceInDown');
+            })
+        })
     });
 
 </script>
 <div class="jumbotron" style="background-color:#000000;">
     <div class="container text-center">
-        @*<h1>Rachel Ross</h1>*@
-        <img src="~/Content/images/path4333-0.png" class="animated bounceInDown" />
-        @*<p class="lead">Junior Web Developer</p>*@
+        <div class="col-md-4" style="color:white;">
+            <ul id="frontList">
+                <li>About</li>
+                <li>Contact</li>
+                <li>Resume</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <img src="~/Content/images/path4333-0.png" id ="portrait"class="animated bounceInDown" alt="Rachel Ross, Jr Web Developer" /></div>
+        <div class="col-md-4"></div>
         @*<p><a href="~/Home/About.cshtml" >Learn more &raquo;</a></p>*@
     </div>
 </div>
@@ -33,7 +41,7 @@
     <div class="row">
         <div class="col-lg-8 col-sm-6">
             <h1 id="jumpy" class="animated bounceInDown"><a href="@Url.Action("About","Home")">About Me</a></h1>
-            <p>I'm a recent graduate of the We Can Code IT code school in Cleveland, Ohio. I'm a certified Software Engineer, trained in C# and the ASP .NET framework. I have a background in technical writing and a degree in biology. I am looking for a position as a Junior Developer. Click 'About Me' to see more.</p>
+            <p>I'm a recent graduate of the We Can Code IT code school in Cleveland, Ohio. I'm a certified Software Engineer, trained in C# and the ASP .NET framework. I have a background in technical writing and a degree in biology. I am looking for a position as a Junior Developer. Click <span>About Me</span> to see more.</p>
             <p><a href="https://www.linkedin.com/in/racheleross"><i class="fa fa-2x fa-linkedin spacer" aria-hidden="true"></i></a><a href="https://github.com/Glimmerville"><i class="fa fa-2x fa-github spacer" aria-hidden="true"></i></a><a href="https://twitter.com/Nycteris"><i class="fa fa-twitter fa-2x spacer" aria-hidden="true"></i></a><a href="http://glimmerville.com"><i class="fa fa-pencil fa-2x spacer" aria-hidden="true"></i></a></p>
         </div>
         <div class="col-md-4 col-sm-6 text-center">
@@ -46,11 +54,11 @@
         <container class="row">
             @foreach (var item in Model)
             {
-                <container class="col-lg-4 col-sm-6">
+                <container class="col-lg-4 col-sm-6" style="clear:right">
                     <p>
                         <h3>
                             @Html.DisplayFor(modelItem => item.ProjectName)
-                        </h3><hr /> @*I just like hr*@
+                        </h3><hr />
                         <h4>Source Code:</h4>
                         @Html.DisplayFor(modelItem => item.ProjectMaterials)
                         <br />
@@ -64,12 +72,14 @@
                         @{
                             if (item.ProjectImage != null)
                             {
-                                <img src="@Url.Content(item.ProjectImage)" alt="Image" style="max-width: 350px" />
+                                <img src="@Url.Content(item.ProjectImage)" alt="Image" style="max-width: 325px" />
                             }
                         }
 
                         @*@Html.DisplayFor(modelItem => item.ProjectSmlImage)*@
                         @*Hide the path and show the image*@
+                        @*Actually it fit my idea better to not have two images per project.
+                        But I kept this in case I need it later.*@
                         @{
                             if (item.ProjectSmlImage != null)
                             {
@@ -81,7 +91,7 @@
                         @{
                             if (item.ProjectRepo != null)
                             {
-                                <a href="@Url.Content(item.ProjectImage)" class="btn btn-info" alt="Git Hub">See it on Github</a>
+                                <a href="@Url.Content(item.ProjectRepo)" class="btn btn-info" alt="Git Hub">See it on Github</a>
                             }
                         }
                         <br />
