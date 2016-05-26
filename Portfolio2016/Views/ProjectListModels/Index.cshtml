@@ -9,7 +9,7 @@
 
 <div class="jumbotron" style="background-color:#000000;">
     <div class="container text-center">
-        <div class="col-md-4" style="color:white;"> 
+        <div class="col-md-4" style="color:white;">
             <ul id="frontList">
                 <li><a href="@Url.Action("About","Home")">About Me</a></li>
                 <li><a href="mailto:racheleross@gmail.com">Email</a></li>
@@ -17,7 +17,8 @@
             </ul>
         </div>
         <div class="col-md-4">
-            <img src="~/Content/images/path4333-0.png" alt="Rachel Ross, Jr Web Developer" /></div>
+            <img src="~/Content/images/path4333-0.png" alt="Rachel Ross, Jr Web Developer" />
+        </div>
         <div class="col-md-4"></div>
     </div>
 </div>
@@ -25,8 +26,8 @@
     <div class="row">
         <div class="col-lg-8 col-sm-6">
             <h1>Hi I'm Rachel!</h1>
-            <p>I'm looking for a position as a Junior Web/Software Developer, and I'm here to help.</p> 
-            <h3 class="animated tada"><a style="text-decoration:underline;" href="@Url.Action("About","Home")">Find Out About Me</a></h3> 
+            <p>I'm looking for a position as a Junior Web/Software Developer, and I'm here to help.</p>
+            <h3 class="animated tada"><a style="text-decoration:underline;" href="@Url.Action("About","Home")">Find Out About Me</a></h3>
             <p><a href="https://www.linkedin.com/in/racheleross"><i class="fa fa-2x fa-linkedin halfspacer" aria-hidden="true"></i></a><a href="https://github.com/Glimmerville"><i class="fa fa-2x fa-github spacer" aria-hidden="true"></i></a><a href="https://twitter.com/Nycteris"><i class="fa fa-twitter fa-2x spacer" aria-hidden="true"></i></a><a href="http://glimmerville.com"><i class="fa fa-pencil fa-2x spacer" aria-hidden="true"></i></a></p>
         </div>
         <div class="col-md-4 col-sm-6 text-center">
@@ -35,55 +36,56 @@
         </div>
     </div>
 
-        <container class="row">
-            @foreach (var item in Model)
+    <container class="row">
+        @foreach (var item in Model)
             {
-                <container class="col-md-4 col-sm-6" style="min-height: 550px;">
-                    <p>
-                        <h3>
-                            @Html.DisplayFor(modelItem => item.ProjectName)
-                        </h3><hr />
-                        <h4>Source Code:</h4>
-                        @Html.DisplayFor(modelItem => item.ProjectMaterials)
-                        <br />
-                        <h4>What it does:</h4>
-                        @Html.DisplayFor(modelItem => item.ProjectDescription)
-                        <br />
+            <container class="col-md-4 col-sm-6" style="min-height: 550px;">
+                <p>
+                    <h3>
+                        @Html.DisplayFor(modelItem => item.ProjectName)
+                    </h3><hr />
+                    <h4>Source Code:</h4>
+                    @Html.DisplayFor(modelItem => item.ProjectMaterials)
+                    <br />
+                    <h4>What it does:</h4>
+                    @Html.DisplayFor(modelItem => item.ProjectDescription)
+                    <br />
 
-                        @*@Html.DisplayFor(modelItem => item.ProjectURL) I will use this when the project is deployed.*@
-                        @*@Html.DisplayFor(modelItem => item.ProjectImage)*@
-                        @*Hide the actual path and show the image*@
-                        @{
-                            if (item.ProjectImage != null)
+                    @*@Html.DisplayFor(modelItem => item.ProjectURL) I will use this when the project is deployed.*@
+                    @*@Html.DisplayFor(modelItem => item.ProjectImage)*@
+                    @*Hide the actual path and show the image*@
+                    @{
+                        if (item.ProjectImage != null)
+                        {
+                            <img src="@Url.Content(item.ProjectImage)" alt="Image" class="img-responsive" />
+                        }
+                    }
+
+                    @*@Html.DisplayFor(modelItem => item.ProjectSmlImage)*@
+                    @*Hide the path and show the image*@
+                    @*Actually it fit my idea better to not have two images per project.
+                        But I kept this in case I need it later.*@
+                    @*@{
+                            if (item.ProjectSmlImage != null)
                             {
-                                <img src="@Url.Content(item.ProjectImage)" alt="Image" class="img-responsive" />
+                                <img src="@Url.Content(item.ProjectSmlImage)" alt="Image" style="max-width: 200px" />
                             }
                         }
-
-                        @*@Html.DisplayFor(modelItem => item.ProjectSmlImage)*@
-                        @*Hide the path and show the image*@
-                        @*Actually it fit my idea better to not have two images per project.
-            But I kept this in case I need it later.*@
-                        @*@{
-                if (item.ProjectSmlImage != null)
-                {
-                    <img src="@Url.Content(item.ProjectSmlImage)" alt="Image" style="max-width: 200px" />
-                }
-            }
-            <br />*@
-                        @*@Html.DisplayFor(modelItem => item.ProjectRepo)*@
-                        @{
-                            if (item.ProjectRepo != null)
-                            {
-                                <a href="@Url.Content(item.ProjectRepo)" class="btn btn-info" alt="Github">See it on Github</a>
-                            }
+                        <br />*@
+                    @*@Html.DisplayFor(modelItem => item.ProjectRepo)*@
+                    @{
+                        if (item.ProjectRepo != null)
+                        {
+                            <a href="@Url.Content(item.ProjectRepo)" class="btn btn-info" alt="Github">See it on Github</a>
                         }
-                        <br />
-                    </p>
-                </container>
-            } @*end of foreach*@
-        </container> @*End of Row*@
+                    }
+                    <br />
+                </p>
+            </container>
+                        } @*end of foreach*@
+                    </container> @*End of Row*@
 
-</div> @*end of div container-fluid*@
+                </div> @*end of div container-fluid*@
+
 
 
