@@ -17,3 +17,4 @@ $(document).ready(function () {
         $('#frontlist').removeClass('hidden');
     }, 1000);
 });
+

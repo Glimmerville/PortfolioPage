@@ -169,3 +169,16 @@ ul#inlineUl li:first-child {
 a:visited {
     color: white;
 }
+a:active, a:hover, a:link, a:visited {
+    color: blue;
+}
+
+.fa:link {
+    color: blue;
+}
+.fa:visited {
+    color:blue;
+}
+.fa:hover {
+    color: cornflowerblue;
+}
