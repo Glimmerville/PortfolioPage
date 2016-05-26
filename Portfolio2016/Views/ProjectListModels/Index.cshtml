@@ -6,32 +6,26 @@
 @{
     ViewBag.Title = "Projects";
 }
-<script>
-$(document).ready(function () {
-    setTimeout(function () {
-        $('#frontlist').removeClass('hidden');
-    }, 1000);
-});
-</script>
+
 <div class="jumbotron" style="background-color:#000000;">
     <div class="container text-center">
-        <div class="col-md-4" style="color:white;"> @*these start life hidden*@
+        <div class="col-md-4" style="color:white;"> 
             <ul id="frontList">
-                <li class="animated"><a href="@Url.Action("About","Home")">About Me</a></li>
-                <li class="animated"><a href="mailto:racheleross@gmail.com">Email</a></li>
-                <li class="animated"><a href="http://bootstrap.glimmerville.com/RacheleRoss2016.pdf">Resume</a></li>
+                <li><a href="@Url.Action("About","Home")">About Me</a></li>
+                <li><a href="mailto:racheleross@gmail.com">Email</a></li>
+                <li><a href="http://bootstrap.glimmerville.com/RacheleRoss2016.pdf">Resume</a></li>
             </ul>
         </div>
         <div class="col-md-4">
-            <img src="~/Content/images/path4333-0.png" id ="portrait"class="animated bounceInDown" alt="Rachel Ross, Jr Web Developer" /></div>
+            <img src="~/Content/images/path4333-0.png" alt="Rachel Ross, Jr Web Developer" /></div>
         <div class="col-md-4"></div>
     </div>
 </div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-8 col-sm-6">
-            <h1>Hi!</h1>
-            <p>I'm looking for a position as a Junior Developer.</p> 
+            <h1>Hi I'm Rachel!</h1>
+            <p>I'm looking for a position as a Junior Web/Software Developer, and I'm here to help.</p> 
             <h3 class="animated tada"><a style="text-decoration:underline;" href="@Url.Action("About","Home")">Find Out About Me</a></h3> 
             <p><a href="https://www.linkedin.com/in/racheleross"><i class="fa fa-2x fa-linkedin halfspacer" aria-hidden="true"></i></a><a href="https://github.com/Glimmerville"><i class="fa fa-2x fa-github spacer" aria-hidden="true"></i></a><a href="https://twitter.com/Nycteris"><i class="fa fa-twitter fa-2x spacer" aria-hidden="true"></i></a><a href="http://glimmerville.com"><i class="fa fa-pencil fa-2x spacer" aria-hidden="true"></i></a></p>
         </div>
@@ -81,7 +75,7 @@ $(document).ready(function () {
                         @{
                             if (item.ProjectRepo != null)
                             {
-                                <a href="@Url.Content(item.ProjectRepo)" class="btn btn-info" alt="Git Hub">See it on Github</a>
+                                <a href="@Url.Content(item.ProjectRepo)" class="btn btn-info" alt="Github">See it on Github</a>
                             }
                         }
                         <br />
